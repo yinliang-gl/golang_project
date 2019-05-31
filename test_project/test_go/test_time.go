@@ -176,37 +176,6 @@ func test_time_8() {
 	}
 }
 
-/*
-Ticker类型
-有时我们会遇到每隔一段时间执行的业务(比如设置心跳时间等)，就可以用它来处理，这是一个重复的过程
-*/
-func test_time_9_1() {
-	// 无法取消
-	//i := 0
-	//tick := time.Tick(1 * time.Second)
-	//for _ = range tick {
-	//	// do something
-	//	fmt.Println("i = ", i)
-	//	i = i + 1
-	//}
-
-}
-func test_time_9_2() {
-	// 可通过调用ticker.Stop取消
-	i := 0
-	ticker := time.NewTicker(1 * time.Second)
-	defer ticker.Stop()
-
-	for _ = range ticker.C {
-		if i == 5 {
-			return
-		}
-		fmt.Println("i = ", i)
-		i = i + 1
-		// do something
-	}
-}
-
 func main() {
 	// test_time_1()
 	// test_time_2()
@@ -216,6 +185,4 @@ func main() {
 	// test_time_6()
 	// test_time_7()
 	// test_time_8()
-	// test_time_9_1()
-	test_time_9_2()
 }
