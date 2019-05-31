@@ -3,5 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("This is a golafsdafsdfsdAAAAAAAAAAAAAAAAAAaaa ")
+	aaa := make([]int, 0, 10)
+	fmt.Println(aaa)
 }
