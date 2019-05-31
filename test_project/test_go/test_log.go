@@ -47,8 +47,8 @@ func test_3() {
 }
 
 /**
-
- */
+日志写入文件
+*/
 func test_4() {
 	fileName := "test_project/test_go/Info_First.log"
 	logFile, err := os.Create(fileName)
