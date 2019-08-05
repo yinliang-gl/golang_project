@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println("This is a golang project with cmake.fasdfsdf ")
+	//当前时间戳
+	t1 := time.Now().Unix()
+	fmt.Println(t1)
+
+	time.Sleep(10 * time.Second)
+	t2 := time.Now().Unix()
+	fmt.Println(t2)
+
+	fmt.Print(t2 - t1)
 }
