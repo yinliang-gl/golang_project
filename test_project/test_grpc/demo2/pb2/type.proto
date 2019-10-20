@@ -1,12 +1,12 @@
 syntax = "proto3";
 package types;
 
-// For more information on gogo.proto, see:
+// For more information on gogo.test_proto, see:
 // https://github.com/gogo/protobuf/blob/master/extensions.md
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+import "github.com/gogo/protobuf/gogoproto/gogo.test_proto";
 import "google/protobuf/timestamp.proto";
-import "github.com/tendermint/tendermint/libs/common/types.proto";
-import "github.com/tendermint/tendermint/crypto/merkle/merkle.proto";
+import "github.com/tendermint/tendermint/libs/common/types.test_proto";
+import "github.com/tendermint/tendermint/crypto/merkle/merkle.test_proto";
 
 // This file is copied from http://github.com/tendermint/abci
 // NOTE: When using custom types, mind the warnings.

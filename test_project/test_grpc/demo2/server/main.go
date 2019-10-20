@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"golang_project/test_project/test_grpc/pb2"
+	"golang_project/test_project/test_grpc/demo2/pb"
 	"google.golang.org/grpc"
 	"io"
 	"net"

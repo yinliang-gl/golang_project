@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	"golang.org/x/net/context"
-	"golang_project/test_project/test_grpc/demo1/pb"
+	"golang_project/test_project/test_grpc/demo1/test_proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"log"

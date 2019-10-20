@@ -3,8 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/fwhezfwhez/errorx"
-	"golang_project/test_project/test_grpc/pb"
+	"golang_project/test_project/test_grpc/demo2/pb"
 	"google.golang.org/grpc"
 	"io"
 )
@@ -43,7 +42,7 @@ func main() {
 				return
 			}
 			if e != nil {
-				fmt.Println(errorx.Wrap(e).Error())
+				fmt.Println(e.Error())
 				return
 			}
 			fmt.Println("receive from server:", stream.Stream)
