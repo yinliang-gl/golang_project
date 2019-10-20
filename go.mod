@@ -8,6 +8,7 @@ require (
 	github.com/golang/protobuf v1.3.1
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0
+	golang.org/x/net v0.0.0-20190503192946-f4e77d36d62c
 	google.golang.org/grpc v1.21.0
 	gopkg.in/gcfg.v1 v1.2.3
 	gopkg.in/warnings.v0 v0.1.2 // indirect
