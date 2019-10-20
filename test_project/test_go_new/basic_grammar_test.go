@@ -60,6 +60,9 @@ type Order struct {
 	Addr       string `json:"addr" from:"addr"`
 }
 
+/**
+测试将类json化
+*/
 func TestBasicGrammar003(t *testing.T) {
 	orderNew := Order{
 		Cid:       "20030",
