@@ -1,6 +1,0 @@
-*.swp
-*.o
-core.[!a-z]*
-target/*
-.idea/*
-cmake-build-debug/*

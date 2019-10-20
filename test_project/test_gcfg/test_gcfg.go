@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/gcfg.v1"
 	"log"
+	"gopkg.in/gcfg.v1"
 )
 
 type GlobalContext struct {
