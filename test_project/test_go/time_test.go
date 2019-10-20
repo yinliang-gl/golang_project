@@ -1,4 +1,4 @@
-package test_go_new
+package test_go
 
 /**
 参考 https://blog.csdn.net/wschq/article/details/80114036
