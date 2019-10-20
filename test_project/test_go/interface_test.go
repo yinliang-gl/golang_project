@@ -38,15 +38,15 @@ func (this *DivModule) Run(a int, b int) (result int) {
 }
 
 func TestAAA(t *testing.T) {
-	var asDspModules []AlgorithmModule
+	var algorithmModules []AlgorithmModule
 
-	asDspModules = append(asDspModules, &AddModule{})
-	asDspModules = append(asDspModules, &SubModule{})
-	asDspModules = append(asDspModules, &MulModule{})
-	asDspModules = append(asDspModules, &DivModule{})
+	algorithmModules = append(algorithmModules, &AddModule{})
+	algorithmModules = append(algorithmModules, &SubModule{})
+	algorithmModules = append(algorithmModules, &MulModule{})
+	algorithmModules = append(algorithmModules, &DivModule{})
 
-	for i := 0; i < len(asDspModules); i++ {
-		fmt.Println(asDspModules[i].Run(100, 90))
+	for i := 0; i < len(algorithmModules); i++ {
+		fmt.Println(algorithmModules[i].Run(100, 90))
 	}
 
 }
