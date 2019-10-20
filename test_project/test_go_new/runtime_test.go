@@ -1,11 +1,12 @@
-package main
+package test_go_new
 
 import (
 	"fmt"
 	"runtime"
+	"testing"
 )
 
-func main() {
+func TestRuntime(t *testing.T) {
 	// 获取CPU核心数
 	fmt.Println(runtime.NumCPU())
 

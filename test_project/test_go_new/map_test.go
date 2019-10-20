@@ -1,11 +1,14 @@
-package main
+package test_go_new
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type MaterialResource struct {
 }
 
-func main() {
+func TestMap01(t *testing.T) {
 	map_variable := make(map[string]*MaterialResource)
 	if map_variable["aaa"] != nil {
 		fmt.Println("aaa1 found")

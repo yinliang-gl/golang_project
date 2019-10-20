@@ -1,15 +1,16 @@
-package main
+package test_go_new
 
 import (
 	"fmt"
 	"sync"
+	"testing"
 	"time"
 )
 
 /*
 timer
 */
-func test_timer_ticker_1() {
+func TestTimerTicker01(t *testing.T) {
 
 	input := make(chan interface{})
 
@@ -47,7 +48,7 @@ func test_timer_ticker_1() {
 *timer定时器，是到固定时间后会执行一次
 *如果timer定时器要每隔间隔的时间执行，实现ticker的效果，使用 func (t *Timer) Reset(d Duration) bool
  */
-func test_timer_ticker_2() {
+func TestTimerTicker02(t *testing.T) {
 	var wg sync.WaitGroup
 	wg.Add(2)
 	//NewTimer 创建一个 Timer，它会在最少过去时间段 d 后到期，向其自身的 C 字段发送当时的时间
@@ -78,8 +79,4 @@ func test_timer_ticker_2() {
 	}(timer1)
 
 	wg.Wait()
-}
-func main() {
-	// test_timer_ticker_1()
-	test_timer_ticker_2()
 }

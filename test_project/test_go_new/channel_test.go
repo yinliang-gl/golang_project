@@ -1,15 +1,16 @@
-package main
+package test_go_new
 
 // TODO
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
 /**
 go关键字可以用来开启一个goroutine(协程))进行任务处理，而多个任务之间如果需要通信，就需要用到channel了。
 */
-func test_01_Simple() {
+func TestChannel01(t *testing.T) {
 	intChan := make(chan int)
 
 	go func() {
@@ -19,8 +20,4 @@ func test_01_Simple() {
 
 	value := <-intChan
 	fmt.Println("value : ", value)
-}
-
-func main() {
-	test_01_Simple()
 }

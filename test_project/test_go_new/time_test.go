@@ -1,4 +1,4 @@
-package main
+package test_go_new
 
 /**
 参考 https://blog.csdn.net/wschq/article/details/80114036
@@ -6,13 +6,14 @@ package main
 import (
 	"fmt"
 	"math"
+	"testing"
 	"time"
 )
 
 /**
 初始化
 */
-func test_time_1() {
+func TestTime01(t *testing.T) {
 	// func Now() Time
 	fmt.Println(time.Now())
 
@@ -37,7 +38,7 @@ func test_time_1() {
 格式化和常用方法
 
 */
-func test_time_2() {
+func TestTime02(t *testing.T) {
 	fmt.Println(time.Now().Format("2006-01-02 15:04:05")) // 2018-04-24 10:11:20
 	fmt.Println(time.Now().Format(time.UnixDate))         // Tue Apr 24 09:59:02 CST 2018
 
@@ -60,7 +61,7 @@ func test_time_2() {
       func (d Duration) Round(m Duration) Duration         // 四舍五入
       func (d Duration) Truncate(m Duration) Duration      // 向下取整
 */
-func test_time_3() {
+func TestTime03(t *testing.T) {
 	tp, _ := time.ParseDuration("1.5s")
 	fmt.Println(tp.Truncate(1000), tp.Seconds(), tp.Nanoseconds())
 }
@@ -68,7 +69,7 @@ func test_time_3() {
 /*
 时区(Location)
 */
-func test_time_4() {
+func TestTime04(t *testing.T) {
 	// 默认UTC
 	_, _ = time.LoadLocation("")
 	// 服务器设定的时区，一般为CST
@@ -86,7 +87,7 @@ func test_time_4() {
 时间运算
   func Until(t Time) Duration     //  等价于 t.Sub(Now())，t与当前时间的间隔
 */
-func test_time_5() {
+func TestTime05(t *testing.T) {
 
 	// func After(d Duration) <-chan Time  非阻塞,可用于延迟
 	time.After(time.Duration(10) * time.Second)
@@ -130,7 +131,7 @@ func test_time_5() {
 /*
 时区转换
 */
-func test_time_6() {
+func TestTime06(t *testing.T) {
 	// time.Local 用来表示当前服务器时区
 	// 自定义地区时间
 	secondsEastOfUTC := int((8 * time.Hour).Seconds())
@@ -154,7 +155,7 @@ func test_time_6() {
 比较两个时间点
 */
 
-func test_time_7() {
+func TestTime07(t *testing.T) {
 	dt := time.Date(2018, 1, 10, 0, 0, 1, 100, time.Local)
 	fmt.Println(time.Now().After(dt))  // true
 	fmt.Println(time.Now().Before(dt)) // false
@@ -166,7 +167,7 @@ func test_time_7() {
 /*
 设置执行时间，超时限制等
 */
-func test_time_8() {
+func TestTime08(t *testing.T) {
 	c := make(chan interface{})
 	select {
 	case m := <-c:
@@ -174,15 +175,4 @@ func test_time_8() {
 	case <-time.After(time.Duration(5) * time.Second):
 		fmt.Println("time out")
 	}
-}
-
-func main() {
-	// test_time_1()
-	// test_time_2()
-	// test_time_3()
-	// test_time_4()
-	// test_time_5()
-	// test_time_6()
-	// test_time_7()
-	// test_time_8()
 }
