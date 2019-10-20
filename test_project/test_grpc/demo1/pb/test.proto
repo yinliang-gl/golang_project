@@ -1,6 +1,6 @@
 syntax = "proto3";
 // 定义包名
-package test;
+package test_proto;
 
 // 可以定义多个服务，每个服务内可以定义多个接口
 service Waiter {
