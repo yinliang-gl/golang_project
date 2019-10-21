@@ -9,12 +9,13 @@ import (
 )
 
 func main() {
+	fmt.Println("start")
 	tracer := opentracing.GlobalTracer()
 
 	clientSpan := tracer.StartSpan("client")
 	defer clientSpan.Finish()
 
-	url := "http://localhost:8082/publish"
+	url := "https://www.baidu.com"
 	req, _ := http.NewRequest("GET", url, nil)
 
 	// Set some tags on the clientSpan to annotate that it's the client span. The additional HTTP tags are useful for debugging purposes.
