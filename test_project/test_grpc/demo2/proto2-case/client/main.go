@@ -2,12 +2,12 @@ package main
 
 import (
 	"context"
-	"errorX"
 	"fmt"
+	"github.com/fwhezfwhez/errorx"
 	"github.com/golang/protobuf/proto"
+	"golang_project/test_project/test_grpc/demo2/proto2-case/pb"
 	"google.golang.org/grpc"
 	"io"
-	"test_X/test_grpc/proto2-case/pb"
 )
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 	fmt.Println(*r.Message)
 
 	// chat
-	chatClient, e :=c.Chat(context.Background())
+	chatClient, e := c.Chat(context.Background())
 	if e != nil {
 		fmt.Println(e.Error())
 		return
@@ -36,9 +36,9 @@ func main() {
 	//	time.Sleep(10 * time.Second)
 	//	chatClient.CloseSend()
 	//}()
-	go func(){
-		for{
-			stream, e:=chatClient.Recv()
+	go func() {
+		for {
+			stream, e := chatClient.Recv()
 			if e == io.EOF {
 				fmt.Println("EOF")
 				return
@@ -51,13 +51,13 @@ func main() {
 		}
 	}()
 	chatClient.Send(&pb.ClientStream{
-		Stream: newBytes(10,9,8,7),
+		Stream: newBytes(10, 9, 8, 7),
 	})
-	select{
-	 //case <-time.After(20 * time.Second):
+	select {
+	//case <-time.After(20 * time.Second):
 	}
 }
 
-func newBytes(a ...byte)[]byte{
+func newBytes(a ...byte) []byte {
 	return a
 }
