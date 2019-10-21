@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-// 主动关闭服务器
+// server 优雅退出
 var server *http.Server
 
 func main() {
