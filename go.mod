@@ -3,16 +3,15 @@ module golang_project
 go 1.12
 
 require (
-	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
+	git.qutoutiao.net/CPC/alarm-sdk v1.0.1
+	git.qutoutiao.net/govine/easylog v0.10.3
 	github.com/fwhezfwhez/errorx v0.0.0-20190917084916-7b3d6baebfde
 	github.com/gin-gonic/gin v1.4.0 // indirect
+	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/golang/protobuf v1.3.1
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0
-	github.com/uber-go/atomic v1.4.0 // indirect
-	github.com/uber/jaeger-client-go v2.19.0+incompatible
-	github.com/uber/jaeger-lib v2.2.0+incompatible
 	golang.org/x/net v0.0.0-20190503192946-f4e77d36d62c
 	google.golang.org/grpc v1.21.0
 	gopkg.in/gcfg.v1 v1.2.3
