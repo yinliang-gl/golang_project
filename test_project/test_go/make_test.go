@@ -18,3 +18,13 @@ func TestMake01(t *testing.T) {
 	b := a[:cap(a)]
 	fmt.Println(b)
 }
+
+/**
+map的make
+*/
+func TestMake02(t *testing.T) {
+	goroutineMap := make(map[string]int)
+	goroutineMap["goroutine"] = 10
+	goroutineMap["goroutine"] = 11
+	fmt.Println(goroutineMap)
+}
