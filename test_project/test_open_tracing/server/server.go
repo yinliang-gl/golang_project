@@ -9,6 +9,10 @@ import (
 	"github.com/opentracing/opentracing-go/ext"
 )
 
+/**
+在浏览器地址栏输入  http://localhost:8082/publish
+*/
+
 func main() {
 	tracer := opentracing.GlobalTracer()
 
