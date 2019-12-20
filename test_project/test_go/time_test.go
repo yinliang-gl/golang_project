@@ -98,7 +98,7 @@ func TestTime05(t *testing.T) {
 	// func Sleep(d Duration)   休眠多少时间，休眠时处于阻塞状态，后续程序无法执行
 	time.Sleep(time.Duration(10) * time.Second)
 
-	fmt.Println(time.Since(start)) // 等价于 Now().Sub(t)， 可用来计算一段业务的消耗时间
+	fmt.Println("耗时：", time.Since(start)) // 等价于 Now().Sub(t)， 可用来计算一段业务的消耗时间
 
 	// func (t Time) Add(d Duration) Time
 	fmt.Println(start.Add(time.Duration(10) * time.Second)) // 加
