@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -13,6 +14,7 @@ func main() {
 
 	http.HandleFunc("/publish", func(w http.ResponseWriter, r *http.Request) {
 		// Extract the context from the headers
+		fmt.Println("receive new request")
 		spanCtx, _ := tracer.Extract(opentracing.HTTPHeaders, opentracing.HTTPHeadersCarrier(r.Header))
 		serverSpan := tracer.StartSpan("server", ext.RPCServerOption(spanCtx))
 		defer serverSpan.Finish()
