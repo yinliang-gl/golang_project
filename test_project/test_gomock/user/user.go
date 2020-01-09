@@ -14,7 +14,7 @@ func NewUser(p person.Male) *User {
 }
 
 func (u *User) GetUserInfo(id int64) string {
-	res := fmt.Sprintf("%d-%s", u.Person.Get(id), u.Person.GetName(id))
+	res := fmt.Sprintf("%d-%s", u.Person.GetId(id), u.Person.GetName(id))
 	//res := fmt.Sprintf("%d-%s", 10, "u.Person.GetName(id)")
 	return res
 }
