@@ -33,10 +33,10 @@ func (m *MockMale) EXPECT() *MockMaleMockRecorder {
 }
 
 // Get mocks base method
-func (m *MockMale) Get(id int64) error {
+func (m *MockMale) Get(id int64) int64 {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Get", id)
-	ret0, _ := ret[0].(error)
+	ret0, _ := ret[0].(int64)
 	return ret0
 }
 
