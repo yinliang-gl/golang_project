@@ -32,18 +32,18 @@ func (m *MockMale) EXPECT() *MockMaleMockRecorder {
 	return m.recorder
 }
 
-// Get mocks base method
-func (m *MockMale) Get(id int64) int {
+// GetId mocks base method
+func (m *MockMale) GetId(id int64) int {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", id)
+	ret := m.ctrl.Call(m, "GetId", id)
 	ret0, _ := ret[0].(int)
 	return ret0
 }
 
-// Get indicates an expected call of Get
-func (mr *MockMaleMockRecorder) Get(id interface{}) *gomock.Call {
+// GetId indicates an expected call of GetId
+func (mr *MockMaleMockRecorder) GetId(id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockMale)(nil).Get), id)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetId", reflect.TypeOf((*MockMale)(nil).GetId), id)
 }
 
 // GetName mocks base method
