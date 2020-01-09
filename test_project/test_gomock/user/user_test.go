@@ -1,6 +1,7 @@
 package user
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/yinliang-gl/golang_project/test_project/test_gomock/mock"
@@ -15,12 +16,10 @@ func TestUser_GetUserInfo(t *testing.T) {
 	var id int64 = 1
 	mockMale := mock.NewMockMale(ctl)
 	gomock.InOrder(
-		mockMale.EXPECT().Get(id).Return(nil),
+		mockMale.EXPECT().Get(id).Return(999.00),
 	)
 
 	user := NewUser(mockMale)
-	err := user.GetUserInfo(id)
-	if err != nil {
-		t.Errorf("user.GetUserInfo err: %v", err)
-	}
+	val := user.GetUserInfo(id)
+	fmt.Println(val)
 }

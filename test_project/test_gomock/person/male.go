@@ -1,5 +1,5 @@
 package person
 
 type Male interface {
-	Get(id int64) int64
+	Get(id int64) int
 }
