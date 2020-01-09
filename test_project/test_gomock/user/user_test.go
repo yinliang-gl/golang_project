@@ -17,6 +17,7 @@ func TestUser_GetUserInfo(t *testing.T) {
 	mockMale := mock.NewMockMale(ctl)
 	gomock.InOrder(
 		mockMale.EXPECT().Get(id).Return(999),
+		mockMale.EXPECT().GetName(id).Return("abc123456"),
 	)
 
 	user := NewUser(mockMale)

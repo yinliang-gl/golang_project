@@ -20,11 +20,6 @@ func Run(aaa bool) (isFiltered bool) {
 }
 
 func main() {
-	isFiltered := false
-
-	isFiltered = Run(true)
-	fmt.Println(isFiltered)
-
-	isFiltered = Run(false)
-	fmt.Println(isFiltered)
+	res := fmt.Sprintf("%d-%s", 10, "abc123")
+	fmt.Println(res)
 }
