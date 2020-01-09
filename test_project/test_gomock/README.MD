@@ -1,5 +1,7 @@
 # gomock
-参考 https://github.com/golang/mock
+参考   
+https://www.jianshu.com/p/5582ff72170a  
+https://github.com/golang/mock
 
 ## 安装 gomock
 1. 支持 gomod  
