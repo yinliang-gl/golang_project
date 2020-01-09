@@ -1,4 +1,4 @@
-module golang_project
+module github.com/yinliang-gl/golang_project
 
 go 1.12
 
