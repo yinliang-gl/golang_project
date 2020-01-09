@@ -45,3 +45,17 @@ func (mr *MockMaleMockRecorder) Get(id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockMale)(nil).Get), id)
 }
+
+// GetName mocks base method
+func (m *MockMale) GetName(id int64) string {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetName", id)
+	ret0, _ := ret[0].(string)
+	return ret0
+}
+
+// GetName indicates an expected call of GetName
+func (mr *MockMaleMockRecorder) GetName(id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetName", reflect.TypeOf((*MockMale)(nil).GetName), id)
+}
