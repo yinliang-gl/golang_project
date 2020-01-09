@@ -9,3 +9,7 @@ https://github.com/golang/mock
 2. 执行如下指令  
     go get github.com/golang/mock/mockgen
 
+## 使用gomock编译生成mock文件  
+执行同级目录下的 build_mock_file.sh 即可
+
+
