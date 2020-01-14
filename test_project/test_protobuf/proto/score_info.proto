@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package score_server;
+package ptoto;
 
 
 /**
