@@ -1,14 +1,15 @@
 package src
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/golang/protobuf/proto"
 	"github.com/yinliang-gl/golang_project/test_project/test_protobuf/proto"
+	"log"
 	"testing"
 )
 
 func TestProtobuf001(t *testing.T) {
-
 	score_info := &ptoto.BaseScoreInfoT{}
 	score_info.WinCount = new(int32)
 	*score_info.WinCount = 1
@@ -44,4 +45,12 @@ func TestProtobuf001(t *testing.T) {
 
 	*score_info_1.Rating = 2000
 	fmt.Printf("after decode:{%s}\n", score_info_1.String())
+
+	result, err := json.MarshalIndent(score_info_1, "", "    ")
+	if err != nil {
+		log.Fatal("GameData arshalIndent err: " + err.Error() + "\n")
+	}
+
+	fmt.Println(string(result))
+
 }
