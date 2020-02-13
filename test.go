@@ -1,21 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
-type AAA struct {
-	aaa int32
-	bbb int64
-	ccc float64
+type FingerPrintJsonObj struct {
+	Title  []uint64
+	Images []uint64
+	Video  []uint64
 }
 
 func main() {
-	var val []AAA
-	size := 10
+	var s FingerPrintJsonObj
 
-	val = make([]AAA, size, size)
+	str1 := "{\n" +
+		"  \"title\": [\"31231312646\",\"31231312647\"],\n" +
+		"  \"resources\": {\n" +
+		"    \"video”: [\"41231312646\",\"43124324321\"],\n" +
+		"    \"images\": [\n" +
+		"      [\"51231312646\",\"51231312648\"],\n" +
+		"      [\"51231312646\",\"51231312648\"],\n" +
+		"      [\"51231312646\",\"51231312648\"]\n" +
+		"    ]\n" +
+		"  }\n" +
+		"}"
 
-	for index, _ := range val {
-		val[index].aaa = int32(index + 1)
+	fmt.Println(len(str1))
+	str := `{"title":[4231432,4321432],"images":[123,456],"video":[123,456]}`
+	err := json.Unmarshal([]byte(str), &s)
+	if err != nil {
+		fmt.Println(err)
 	}
-	fmt.Println(val)
+	fmt.Println(s)
+	for _, item := range s.Title {
+		fmt.Println(item)
+	}
+	//fmt.Println(s.Servers[0].ServerName)
 }
