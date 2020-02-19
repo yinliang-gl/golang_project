@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"golang.org/x/net/context"
 	"math/rand"
+	"time"
 )
 
 func chiHanBao_01(ctx context.Context) <-chan int {
@@ -30,4 +31,20 @@ func chiHanBao_01(ctx context.Context) <-chan int {
 
 	return c
 
+}
+
+func chiHanBao_02(ctx context.Context) {
+	n := 0
+	for {
+		select {
+		case <-ctx.Done():
+			fmt.Println("stop")
+			return
+		default:
+			incr := rand.Intn(5)
+			n += incr
+			fmt.Printf("我吃了 %d 个汉堡\n", n)
+		}
+		time.Sleep(time.Second)
+	}
 }

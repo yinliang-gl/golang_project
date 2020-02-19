@@ -6,11 +6,12 @@ import (
 	"fmt"
 	"golang.org/x/net/context"
 	"testing"
+	"time"
 )
 
 /**
-
- */
+吃汉堡比赛，奥特曼每秒吃0-5个，计算吃到10的用时
+*/
 func TestContext001(t *testing.T) {
 	ctx, a_cancel := context.WithCancel(context.Background())
 	eatNum := chiHanBao_01(ctx)
@@ -23,4 +24,13 @@ func TestContext001(t *testing.T) {
 
 	fmt.Println("正在统计结果。。。")
 	//time.Sleep(1 * time.Second)
+}
+
+/**
+吃汉堡比赛，奥特曼每秒吃0-5个，用时10秒，可以吃多少个
+*/
+func TestContext002(t *testing.T) {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	chiHanBao_02(ctx)
+	defer cancel()
 }
