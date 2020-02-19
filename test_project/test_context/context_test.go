@@ -35,3 +35,15 @@ func TestContext002(t *testing.T) {
 	chiHanBao_02(ctx)
 	defer cancel()
 }
+
+/**
+携带关键信息，为全链路提供线索，比如接入elk等系统，需要来一个trace_id，那WithValue就非常适合做这个事。
+*/
+func TestContext003(t *testing.T) {
+	ctx := context.WithValue(context.Background(), "trace_id", "88888888")
+	// 携带session到后面的程序中去
+	ctx = context.WithValue(ctx, "session", 1)
+
+	process(ctx)
+
+}

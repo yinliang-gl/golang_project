@@ -48,3 +48,20 @@ func chiHanBao_02(ctx context.Context) {
 		time.Sleep(time.Second)
 	}
 }
+
+func process(ctx context.Context) {
+	session, ok := ctx.Value("session").(int)
+	fmt.Println(ok)
+	if !ok {
+		fmt.Println("something wrong")
+		return
+	}
+
+	if session != 1 {
+		fmt.Println("session 未通过")
+		return
+	}
+
+	traceID := ctx.Value("trace_id").(string)
+	fmt.Println("trace_id:", traceID, ", session:", session)
+}
