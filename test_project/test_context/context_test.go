@@ -30,6 +30,7 @@ func TestContext001(t *testing.T) {
 吃汉堡比赛，奥特曼每秒吃0-5个，用时10秒，可以吃多少个
 */
 func TestContext002(t *testing.T) {
+	// ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(10))
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	chiHanBao_02(ctx)
 	defer cancel()
