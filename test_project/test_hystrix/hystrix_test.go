@@ -13,11 +13,11 @@ import (
 */
 func TestHystrix001(t *testing.T) {
 	hystrix.ConfigureCommand("my_command", hystrix.CommandConfig{
-		Timeout:                1000 * 10, // 请求超时的时间，单位毫秒
-		ErrorPercentThreshold:  1,         // 允许出现的错误比例
-		SleepWindow:            10000,     // 熔断开启多久尝试发起一次请求
-		MaxConcurrentRequests:  1000,      // 允许的最大并发请求数
-		RequestVolumeThreshold: 5,         // 波动期内的最小请求数，默认波动期 10S
+		Timeout:                500,   // 500ms超时
+		MaxConcurrentRequests:  10000, // 不限制并发数量
+		RequestVolumeThreshold: 3000,  // 10s 内到 3000 的失败就熔断
+		SleepWindow:            3000,  // ms 熔断3S
+		ErrorPercentThreshold:  25,    // 25% 的请求失败
 	})
 
 	output := make(chan bool, 1)
@@ -26,15 +26,18 @@ func TestHystrix001(t *testing.T) {
 		time.Sleep(15 * time.Second)
 		output <- true
 		return nil
-	}, nil) // 第二个参数不为nil的时候，超时不返回，而是调用第二个参数指定的函数。
+	}, func(err error) error {
+		fmt.Println("get an error, handle it, error is ", err)
+		return err
+	})
 
 	select {
 	case out := <-output:
 		// success
-		fmt.Println("succcess ", out)
+		fmt.Println("succcess: ", out)
 	case err := <-errors:
 		// failure
-		fmt.Println("failure ", err)
+		fmt.Println("failure: ", err)
 	}
 }
 
