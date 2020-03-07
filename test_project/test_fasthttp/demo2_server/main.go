@@ -30,13 +30,6 @@ func httpHandle(ctx *fasthttp.RequestCtx) {
 	body := newRequest.Body()
 	fmt.Println(string(body))
 
-	//requestContext := &model.RequestContext{}
-	//
-	//err := json.Unmarshal(body, requestContext)
-	//if err != nil {
-	//
-	//}
-
 	newRequest = nil
 	ctx.Response.AppendBodyString("ok")
 	ctx.Response.SetStatusCode(204)
