@@ -75,6 +75,5 @@ func TestInterface02(t *testing.T) {
 			continue
 		}
 		fmt.Printf("%s, %d\n", moduleNames[i], module.Run(100, 90))
-		// fmt.Println(GetModule(moduleNames[i]).Run(100, 90))
 	}
 }
