@@ -3,6 +3,7 @@ module github.com/yinliang-gl/golang_project
 go 1.12
 
 require (
+	github.com/afex/hystrix-go v0.0.0-20180502004556-fa1af6a1f4f5
 	github.com/fwhezfwhez/errorx v0.0.0-20190917084916-7b3d6baebfde
 	github.com/gin-gonic/gin v1.4.0 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
@@ -10,8 +11,10 @@ require (
 	github.com/golang/protobuf v1.3.1
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/satori/go.uuid v1.2.0 // indirect
+	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/spaolacci/murmur3 v1.1.0
-	golang.org/x/net v0.0.0-20190503192946-f4e77d36d62c
+	github.com/valyala/fasthttp v1.9.0
+	golang.org/x/net v0.0.0-20190827160401-ba9fcec4b297
 	google.golang.org/grpc v1.21.0
 	gopkg.in/gcfg.v1 v1.2.3
 	gopkg.in/warnings.v0 v0.1.2 // indirect
