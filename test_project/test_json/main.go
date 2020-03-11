@@ -19,19 +19,25 @@ type ErrorResponse struct {
 	Msg      string
 }
 
-type Serverslice struct {
+type TaobaoRtaResponse struct {
 	Item                                 string
 	Usergrowth_dhh_delivery_ask_response UsergrowthDhhDeliveryAskResponse
 	Error_response                       ErrorResponse
 }
 
 func main() {
-	var s Serverslice
-	str1 := `{"item":"fasfds","usergrowth_dhh_delivery_ask_response":
-   {"result":true,"task_id":"123456","errcode":1},"error_response":
-   {"sub_msg":"非法参数","code":50, "sub_code":"isv.invalid-parameter",  "msg":"Remote service error" }}`
+	var s TaobaoRtaResponse
+	//str := `{"item":"fasfds","usergrowth_dhh_delivery_ask_response":
+	//{"result":true,"task_id":"123456","errcode":1},"error_response":
+	//{"sub_msg":"非法参数","code":50, "sub_code":"isv.invalid-parameter",  "msg":"Remote service error" }}`
 
-	err := json.Unmarshal([]byte(str1), &s)
+	str := `{"item":"fasfds","usergrowth_dhh_delivery_ask_response":
+	{"result":true,"task_id":"123456","errcode":1}}`
+
+	//str := `{"item":"fasfds","error_response":
+	//{"sub_msg":"非法参数","code":50, "sub_code":"isv.invalid-parameter",  "msg":"Remote service error" }}`
+
+	err := json.Unmarshal([]byte(str), &s)
 	if err != nil {
 		fmt.Println(err)
 	}
