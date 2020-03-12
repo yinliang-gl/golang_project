@@ -20,21 +20,20 @@ type ErrorResponse struct {
 }
 
 type TaobaoRtaResponse struct {
-	Item                                 string
 	Usergrowth_dhh_delivery_ask_response UsergrowthDhhDeliveryAskResponse
 	Error_response                       ErrorResponse
 }
 
 func main() {
 	var s TaobaoRtaResponse
-	//str := `{"item":"fasfds","usergrowth_dhh_delivery_ask_response":
+	//str := `{"usergrowth_dhh_delivery_ask_response":
 	//{"result":true,"task_id":"123456","errcode":1},"error_response":
 	//{"sub_msg":"非法参数","code":50, "sub_code":"isv.invalid-parameter",  "msg":"Remote service error" }}`
 
-	str := `{"item":"fasfds","usergrowth_dhh_delivery_ask_response":
+	str := `{"usergrowth_dhh_delivery_ask_response":
 	{"result":true,"task_id":"123456","errcode":1}}`
 
-	//str := `{"item":"fasfds","error_response":
+	//str := `{"error_response":
 	//{"sub_msg":"非法参数","code":50, "sub_code":"isv.invalid-parameter",  "msg":"Remote service error" }}`
 
 	err := json.Unmarshal([]byte(str), &s)
