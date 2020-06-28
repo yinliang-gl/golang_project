@@ -1,6 +1,9 @@
 //JSON解析到结构体
 package main
 
+/*
+	这种json解析速度没有json-iterator快，json-iterator参考test_json-iterator
+*/
 import (
 	"encoding/json"
 	"fmt"
