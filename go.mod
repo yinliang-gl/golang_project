@@ -11,6 +11,7 @@ require (
 	github.com/golang/protobuf v1.3.1
 	github.com/json-iterator/go v1.1.6
 	github.com/opentracing/opentracing-go v1.1.0
+	github.com/robfig/cron v1.2.0
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/spaolacci/murmur3 v1.1.0
