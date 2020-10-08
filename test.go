@@ -2,12 +2,34 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
-	str := []string{"1", "2", "3"}
-	fmt.Println(str[:0])
+	requests := []int{12, 2, 3, 41, 5, 6, 1, 12, 3, 4, 2, 31}
+	for _, n := range requests {
+		run(n)
+	}
 
-	fmt.Println(time.Now().Unix())
+	for i:=0; i < 100; i++ {
+		run(i)
+	}
+
+	for {
+		select {}
+	}
+}
+
+func run(num int) {
+	defer func() {
+		if err := recover();err != nil {
+			fmt.Printf("%s\n", err)
+		}
+	}()
+
+	fmt.Printf("num:%d\n", num)
+	//模拟请求错误
+	if num%5 == 0 {
+		panic("请求出错")
+	}
+
 }
