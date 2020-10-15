@@ -9,43 +9,8 @@ import (
 	"fmt"
 )
 
-type OperatorItem struct {
-	Key       uint64  `json:"key"`
-	Op        string  `json:"op"`
-	Value     []int64 `json:"value"`
-	Threshold string  `json:"threshold"`
-}
-
-type OperatorList struct {
-	operatorItems []OperatorItem `json:"list"`
-}
-
-func main() {
-	var err error
 
 
-
-
-
-
-
-	str1 := `{
-      "key": "budget",
-      "op": "inc",
-      "value": [10],
-      "thres": 0
-    }`
-
-	var OperatorItem OperatorItem
-	err = json.Unmarshal([]byte(str1), &OperatorItem)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Printf("%#v\n", OperatorItem)
-
-	return
-
-}
 
 type UsergrowthDhhDeliveryAskResponse struct {
 	Result  bool
