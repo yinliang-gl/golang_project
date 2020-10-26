@@ -63,21 +63,27 @@ type OperatorInfo struct {
 	SetInfo    map[string]string `json:"set_info"`
 }
 
+
+type OperatorInfoList struct {
+	List []OperatorInfo `json:"list"`
+}
+
 func TestAnalyseJsonMap(t *testing.T) {
 	operatorInfo := OperatorInfo{
-		AccountId:  0,
-		CampaignId: 0,
-		AdGroupId:  0,
+		AccountId:  1,
+		CampaignId: 2,
+		AdGroupId:  3,
 		SetInfo:    make(map[string]string),
 	}
 	operatorInfo.SetInfo["aaa"] = "bbb"
 	operatorInfo.SetInfo["ccc"] = "ddd"
 
+	operatorInfoList := OperatorInfoList{}
+	operatorInfoList.List = append(operatorInfoList.List, operatorInfo)
 
-	resByte, err := json.Marshal(operatorInfo)
+	resByte, err := json.Marshal(operatorInfoList)
 	if err != nil {
-
+		fmt.Printf("error exit %#v\n", err)
 	}
 	fmt.Println(string(resByte))
-
 }
