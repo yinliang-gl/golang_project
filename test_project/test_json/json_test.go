@@ -38,7 +38,6 @@ func TestAnalyseJson2(t *testing.T) {
 	}
 	fmt.Printf("%#v\n", OperatorList)
 	fmt.Printf("%#v\n", len(OperatorList.OperatorItems))
-
 }
 
 func TestAnalyseJson1(t *testing.T) {
@@ -55,4 +54,30 @@ func TestAnalyseJson1(t *testing.T) {
 		fmt.Println(err)
 	}
 	fmt.Printf("%#v\n", OperatorItem)
+}
+
+type OperatorInfo struct {
+	AccountId  int64             `json:"account_id"`
+	CampaignId int64             `json:"campaign_id"`
+	AdGroupId  int64             `json:"ad_group_id"`
+	SetInfo    map[string]string `json:"set_info"`
+}
+
+func TestAnalyseJsonMap(t *testing.T) {
+	operatorInfo := OperatorInfo{
+		AccountId:  0,
+		CampaignId: 0,
+		AdGroupId:  0,
+		SetInfo:    make(map[string]string),
+	}
+	operatorInfo.SetInfo["aaa"] = "bbb"
+	operatorInfo.SetInfo["ccc"] = "ddd"
+
+
+	resByte, err := json.Marshal(operatorInfo)
+	if err != nil {
+
+	}
+	fmt.Println(string(resByte))
+
 }

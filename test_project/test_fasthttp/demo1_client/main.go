@@ -23,6 +23,8 @@ func main() {
 	requestBody := []byte(`{"request":"test"}`)
 	req.SetBody(requestBody)
 
+	req.SetConnectionClose()
+
 	resp := fasthttp.AcquireResponse()
 	defer fasthttp.ReleaseResponse(resp) // 用完需要释放资源
 
