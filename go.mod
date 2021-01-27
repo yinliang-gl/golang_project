@@ -15,6 +15,7 @@ require (
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/spaolacci/murmur3 v1.1.0
+	github.com/tealeg/xlsx v1.0.5
 	github.com/valyala/fasthttp v1.9.0
 	golang.org/x/net v0.0.0-20190827160401-ba9fcec4b297
 	google.golang.org/grpc v1.21.0

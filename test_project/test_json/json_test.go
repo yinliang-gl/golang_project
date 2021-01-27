@@ -56,29 +56,43 @@ func TestAnalyseJson1(t *testing.T) {
 	fmt.Printf("%#v\n", OperatorItem)
 }
 
-type OperatorInfo struct {
-	AccountId  int64             `json:"account_id"`
-	CampaignId int64             `json:"campaign_id"`
-	AdGroupId  int64             `json:"ad_group_id"`
-	SetInfo    map[string]string `json:"set_info"`
+type SetInfo struct {
+	Key    string `json:"key"`
+	Value  string `json:"value"`
+	ErrMsg string `json:"err_msg"`
 }
 
+type ConsistencyInfo struct {
+	AccountId  int64     `json:"account_id"`
+	CampaignId int64     `json:"campaign_id"`
+	AdGroupId  int64     `json:"ad_group_id"`
+	SetInfos   []SetInfo `json:"set_infos"`
+}
 
-type OperatorInfoList struct {
-	List []OperatorInfo `json:"list"`
+type ConsistencyInfoList struct {
+	List []ConsistencyInfo `json:"list"`
 }
 
 func TestAnalyseJsonMap(t *testing.T) {
-	operatorInfo := OperatorInfo{
+	operatorInfo := ConsistencyInfo{
 		AccountId:  1,
 		CampaignId: 2,
 		AdGroupId:  3,
-		SetInfo:    make(map[string]string),
 	}
-	operatorInfo.SetInfo["aaa"] = "bbb"
-	operatorInfo.SetInfo["ccc"] = "ddd"
 
-	operatorInfoList := OperatorInfoList{}
+	operatorInfo.SetInfos = append(operatorInfo.SetInfos, SetInfo{
+		Key:    "budget",
+		Value:  "100",
+		ErrMsg: "can't ping",
+	})
+
+	operatorInfo.SetInfos = append(operatorInfo.SetInfos, SetInfo{
+		Key:    "name",
+		Value:  "new_fdsafdsfsd",
+		ErrMsg: "can't ping",
+	})
+
+	operatorInfoList := ConsistencyInfoList{}
 	operatorInfoList.List = append(operatorInfoList.List, operatorInfo)
 
 	resByte, err := json.Marshal(operatorInfoList)
