@@ -16,8 +16,8 @@ require (
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/spaolacci/murmur3 v1.1.0
 	github.com/tealeg/xlsx v1.0.5
-	github.com/valyala/fasthttp v1.9.0
-	golang.org/x/net v0.0.0-20190827160401-ba9fcec4b297
+	github.com/valyala/fasthttp v1.34.0
+	golang.org/x/net v0.0.0-20220225172249-27dd8689420f
 	google.golang.org/grpc v1.21.0
 	gopkg.in/gcfg.v1 v1.2.3
 	gopkg.in/warnings.v0 v0.1.2 // indirect
